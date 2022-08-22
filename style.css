@@ -22,7 +22,7 @@ body {
 }
 
 .container {
-  height: 100vh;
+  height: 95vh;
   width: 100%;
 
   display: flex;
@@ -32,7 +32,7 @@ body {
   row-gap: 3rem;
 }
 
-.container::before {
+/* .container::before {
   content: '';
   position: absolute;
   width: 1440px;
@@ -47,7 +47,7 @@ body {
   z-index: -1;
 
   opacity: 1;
-}
+} */
 
 /* //CSS LAYOUT */
 .box {
@@ -61,8 +61,9 @@ body {
   border-radius: 0.5rem;
   overflow: hidden;
 
-  opacity: 0.4;
+  /* opacity: 0.4; */
   margin-top: 2.125rem;
+  box-shadow: 0 10px 15px hsla(0, 0%, 0%, 0.1);
 }
 
 .top-part,
@@ -112,6 +113,7 @@ h1 {
 .description {
   line-height: 1.7;
   letter-spacing: 0.5px;
+  color:hsla(0,0%,0%,.50);
 }
 
 .left,
@@ -132,11 +134,13 @@ h1 {
   column-gap: 0.8rem;
   margin-bottom: 0.5rem;
   letter-spacing: 0.3px;
+  color:hsla(0,100%,100%,.5);
 }
 
 .pricing span {
   font-size: 30px;
   font-weight: 700;
+  color:hsla(0,100%,100%,1);
 }
 
 .pricing-description {
@@ -154,11 +158,13 @@ h1 {
   text-align: center;
   font-size: 18px;
   letter-spacing: -0.4px;
+  box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1);
 }
 
 .right-heading {
   font-size: 20px;
   margin-bottom: 1.2rem;
+
 }
 
 .right ul li {
@@ -166,16 +172,73 @@ h1 {
   line-height: 1.5;
   font-size: 13px;
   font-weight: 100;
+  letter-spacing: .3px;
+  color:hsla(0,100%,100%,.6);
 }
 
 .attribution {
   font-size: 11px;
   text-align: center;
   padding-bottom: 1rem;
+  font-weight: 700;
+
 }
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: var(--cyan);
+  text-decoration: none;
+}
+
+.attribution a:hover {
+  color:var(--bright-yellow)
 }
 
 @media screen and (max-width: 767px) {
+  .container{
+    max-height: 95vh;
+  }
+
+  .box {
+    max-width: 90%;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: inherit;
+    margin-top: 0;
+  }
+
+  .top-part,
+  .left,
+  .right {
+    padding: 1.6rem ;
+  }
+
+  .top-part {
+    background-color: #fff;
+    grid-column: 1/ span 2;
+    height: min-content;
+
+  }
+
+  .top-heading {
+    letter-spacing: 0px;
+  }
+
+  .description{
+    letter-spacing: 0
+  }
+
+  .bottom-part {
+    height: min-content;
+  }
+
+  .left {
+    grid-column: 1/ span 2;
+    height: 100%;
+    background: hsl(180, 61%, 44%);
+  }
+  .right {
+    grid-column: 1/ span 2;;
+    height: min-content;
+    background: hsl(180, 47%, 52%);
+  }
 }
